@@ -23,7 +23,7 @@ $(function () {
       evt.preventDefault();
       const currCity = $input.val();
       console.log(currCity)
-      $.ajax(`${BASE_URL}${currCity}&appid=${API_KEY}`)
+      $.ajax(`${BASE_URL}${currCity}&appid=${API_KEY}&units=imperial`)
         .then(function(data) {
           weatherData = data
         render();
@@ -38,8 +38,8 @@ $(function () {
         // create p tags with weatherData values interpolated within them
         `
         <p>Weather For: ${weatherData.name}</p>
-        <p>Temperature: ${weatherData.main.temp}</p>
-        <p>Feels Like: ${weatherData.main.feels_like}</p>
+        <p>Temperature: ${weatherData.main.temp}&#176;</p>
+        <p>Feels Like: ${weatherData.main.feels_like}&#176;</p>
         <p>Weather: ${weatherData.weather[0].description}</p>
         `
       )
