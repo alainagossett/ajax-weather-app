@@ -1,0 +1,16 @@
+body {
+    font-family: Helvetica;
+}
+
+h1 {
+    text-align: center;
+}
+
+.button {
+    background-color: blue;
+    color: white;
+}
+
+.button:hover {
+    background-color: #6fb1fc;
+}
